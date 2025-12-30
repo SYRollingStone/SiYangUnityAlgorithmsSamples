@@ -1,0 +1,11 @@
+OVDF v1.1
+AStarSimpleManager, Assembly-CSharp
+MetaGuid:bf9aa14923c37a547b6d03d3903e34e0
+
+# matrixWidth
++ [Sirenix.OdinInspector.LabelTextAttribute]
+	Text = "矩阵宽度"
+
+# matrixHeight
++ [Sirenix.OdinInspector.LabelTextAttribute]
+	Text = "矩阵高度"
