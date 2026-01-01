@@ -10,7 +10,7 @@ namespace Pathfinding.AStar
         public Vector2Int start ;  // 起点
         public Vector2Int end ;  // 终点
         private List<AStarNode> openList = new List<AStarNode>();  // 开放列表
-        private HashSet<AStarNode> closedList = new HashSet<AStarNode>();  // 关闭列表
+        private HashSet<AStarNode> closedList = new HashSet<AStarNode>();  // 关闭列表 ,因为数据结构中的数据来自于不同对象，所以我没有重写Equals/GetHashCode
         private AStarNode[,] nodes;  // 存储所有节点的数组
         
         private Vector2Int[] directions = new Vector2Int[]
