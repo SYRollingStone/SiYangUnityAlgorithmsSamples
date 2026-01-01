@@ -20,6 +20,8 @@ public class AStarSimpleManager : MonoBehaviour
     
     private bool isInitialized;
     private GameObject[,] grid;
+
+    private int[,] matrix;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +31,14 @@ public class AStarSimpleManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (isInitialized)
+        {
+            if (Input.GetKey(KeyCode.Space))
+            {
+                Dir4AStarAlgorithm dir4AStarAlgorithm = new Dir4AStarAlgorithm(matrix);
+                dir4AStarAlgorithm.RunAStar();
+            }
+        }
     }
 
     [Button("创建矩阵")]
@@ -48,7 +57,7 @@ public class AStarSimpleManager : MonoBehaviour
             return;
         }
         
-        int[,] matrix = LoadMatrix(matrixText);
+        matrix = LoadMatrix(matrixText);
         if (matrix == null)
         {
             Debug.LogError("matrix is null!");
