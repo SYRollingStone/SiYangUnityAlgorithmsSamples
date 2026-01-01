@@ -15,20 +15,20 @@ namespace Pathfinding.AStar
         
         private Vector2Int[] directions = new Vector2Int[]
         {
-            new Vector2Int(0, 1),  // 向上
-            new Vector2Int(1, 0),  // 向右
-            new Vector2Int(0, -1), // 向下
-            new Vector2Int(-1, 0)  // 向左
+            new Vector2Int(0, -1), // 上
+            new Vector2Int(1, 0),  // 右
+            new Vector2Int(0, 1),  // 下
+            new Vector2Int(-1, 0), // 左
         };
 
         public Dir4AStarAlgorithm(int[,] matrixParam)
         {
             matrix = matrixParam;
             
-            int rows = matrix.GetLength(0);
-            int cols = matrix.GetLength(1);
+            int cols = matrix.GetLength(0);
+            int rows = matrix.GetLength(1);
 
-            nodes = new AStarNode[rows, cols];
+            nodes = new AStarNode[cols, rows];
             
             // 初始化节点
             for (int i = 0; i < rows; i++)
